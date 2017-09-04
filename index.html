@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Техномарт</title>
   <link href="./css/normalize.css" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/style.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
@@ -14,10 +14,10 @@
       <div class="container">
         <a class="logo main-header-top-menu-logo">Техномарт</a>
         <div class="main-header-top-menu-layout">
-          <div class="main-header-top-menu-search">
+          <form class="main-header-top-menu-search" action="" method="post">
             <input id="search-btn" type="text" name="search" placeholder="Поиск:">
             <label for="search-btn"></label>
-          </div>
+          </form>
           <div class="main-header-top-menu-actions">
             <a class="main-header-top-menu-actions-bookmarks" href="#">Закладки: 0</a>
             <a class="main-header-top-menu-actions-cart" href="#">Корзина: 0</a>
@@ -30,8 +30,8 @@
       <div class="main-header-info">
         <p class="main-header-info-about">Интернет-магазин<br> строительных материалов<br> и инструментов для ремонта</p>
         <div class="main-header-info-contact">
-          <a href="tel:+7-812-555-05-55">+7 (812) 555-05-55</a>
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          <a class="main-header-info-contact-phone" href="tel:+7-812-555-05-55">+7 (812) 555-05-55</a>
+          <a class="main-header-info-contact-address" href="#">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</a>
         </div>
         <div class="main-header-info-user">
           <a class="main-header-info-user-login" href="#">Войти</a>
@@ -229,8 +229,8 @@
         <div class="main-info-contacts">
           <h2>Контакты</h2>
           <p>Вы можете забрать товар сами,<br> заехав в наш офис:</p>
-          <a href="#" class="main-info-contacts-map"><img src="./img/map.jpg" alt=""></a>
-          <a href="#" class="btn">Заблудились? Напишите нам!</a>
+          <a class="main-info-contacts-map" href="#"><img src="./img/map.jpg" alt=""></a>
+          <a class="btn main-info-contacts-contact" href="#">Заблудились? Напишите нам!</a>
         </div>
       </div>
     </div>
@@ -285,5 +285,33 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal-contact">
+    <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+    <form action="" class="modal-contact-form" method="post">
+      <div class="modal-contact-upper-layout">
+        <div class="modal-contact-name">
+          <label for="contact-form-name">Ваше имя:</label>
+          <input id="contact-form-name" type="text" name="login" placeholder="Представьтесь, пожалуйста">
+        </div>
+        <div class="modal-contact-email">
+          <label for="contact-form-email">Ваш e-mail:</label>
+          <input id="contact-form-email" type="text" name="email" placeholder="Для отправки ответа">
+        </div>
+      </div>
+      <div class="modal-contact-message">
+        <label for="contact-form-message">Текст письма:</label>
+        <textarea id="contact-form-message" type="text" name="message" placeholder="В свободной форме"></textarea>
+      </div>
+      <button class="btn" type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <div class="modal-map">
+    <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+191186!5e0!3m2!1sen!2sru!4v1504382039049" width="940" height="446" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+  <script src="./js/scripts.js"></script>
 </body>
 </html>

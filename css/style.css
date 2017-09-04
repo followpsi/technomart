@@ -32,6 +32,7 @@ img {
   width: 200px;
   padding: 10px 0;
 
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -144,16 +145,16 @@ img {
   line-height: 18px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.main-header-top-menu-search input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
 }
-::-moz-placeholder { /* Firefox 19+ */
+.main-header-top-menu-search input::-moz-placeholder { /* Firefox 19+ */
   color: #fff;
 }
-:-ms-input-placeholder { /* IE 10+ */
+.main-header-top-menu-search input:-ms-input-placeholder { /* IE 10+ */
   color: #fff;
 }
-:-moz-placeholder { /* Firefox 18- */
+.main-header-top-menu-search input:-moz-placeholder { /* Firefox 18- */
   color: #fff;
 }
 
@@ -309,7 +310,7 @@ a.main-header-top-menu-actions-make-order:active {
   width: 300px;
 }
 
-.main-header-info-contact a {
+.main-header-info-contact-phone {
   position: relative;
 
   display: block;
@@ -328,7 +329,7 @@ a.main-header-top-menu-actions-make-order:active {
   line-height: 18px;
 }
 
-.main-header-info-contact a::before {
+.main-header-info-contact-phone::before {
   position: absolute;
   top: 10px;
   left: 12px;
@@ -344,15 +345,21 @@ a.main-header-top-menu-actions-make-order:active {
   background-position: -23px -272px;
 }
 
-.main-header-info-contact p {
+.main-header-info-contact-address {
   margin: 0;
   padding: 0;
   padding-left: 10px;
+
+  text-decoration: none;
 
   color: #32425c;
 
   font-size: 14px;
   line-height: 24px;
+}
+
+.main-header-info-contact-address:hover {
+  text-decoration: underline;
 }
 
 .main-header-info-user {
@@ -1379,4 +1386,176 @@ a.main-header-info-user-login:active::after {
   text-decoration: none;
 
   color: #ee3643;
+}
+
+html {
+  position: relative;
+}
+
+.modal-contact {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+
+  display: none;
+
+  width: 620px;
+  min-height: 430px;
+  padding: 0 80px;
+  padding-top: 53px;
+  padding-bottom: 140px;
+
+  transform: translateX(-50%);
+
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0 20px 40px 0 rgba(0, 1, 1, 0.75);
+}
+
+.modal-contact::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 7px;
+
+  content: "";
+
+  background-color: #ee3643;
+}
+
+.modal-contact::after {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 112px;
+
+  content: "";
+
+  background-color: #f1f1f1;
+}
+
+.modal-content-close {
+  position: absolute;
+  top: 14px;
+  right: 7px;
+
+  width: 25px;
+  height: 25px;
+
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+
+  font-size: 0;
+}
+
+.modal-content-close::before,
+.modal-content-close::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 5px;
+  height: 25px;
+  margin-left: -2px;
+
+  content: "";
+
+  background-color: #ee3643;
+}
+
+.modal-content-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-content-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-contact-upper-layout {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 21px;
+}
+
+.modal-contact-form label {
+  display: table;
+
+  margin-bottom: 9px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+.modal-contact-name input,
+.modal-contact-email input,
+.modal-contact-message textarea {
+  width: 220px;
+  height: 38px;
+  padding: 10px 14px;
+
+  color: #000;
+  border: 2px solid #d7dcde;
+  border-radius: 2px;
+
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.modal-contact-message textarea {
+  width: 100%;
+  height: 114px;
+
+  resize: none;
+}
+
+.modal-contact-form .btn[type="submit"] {
+  position: absolute;
+  z-index: 20;
+  bottom: 37px;
+  left: 50%;
+
+  width: 460px;
+
+  transform: translateX(-50%);
+  text-transform: uppercase;
+
+  color: #fff;
+  border: none;
+
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.modal-map {
+  position: fixed;
+  bottom: 357px;
+  left: 50%;
+
+  display: none;
+
+  width: 940px;
+  height: 446px;
+
+  transform: translateX(-50%);
+
+  background-image: url(../img/map-popup.jpg);
+  box-shadow: 0px 0px 14.72px 1.28px rgba(35, 31, 32, 0.5);
+}
+
+.modal-content-show {
+  display: block;
 }
